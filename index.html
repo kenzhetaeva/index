@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="blue_block"></div>
+		<div class="questions">
+			<h1>Тест по географии</h1>
+			<div class="question">
+				<h2>Столица России</h2>
+				<div class="chekbox">
+					<input type="radio" id="bishkek" name="first" value="wrong">
+				<label for="bishkek">Бишкек</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="madrid" name="first" value="wrong">
+				<label for="madrid">Mадрид</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="moscow" name="first" value="right">
+				<label for="moscow">Москва</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="washington" name="first" value="wrong">
+				<label for="washington">Вашингтон</label>
+				</div>
+			</div>
+			<div class="question">
+				<h2>Столица США</h2>
+				<div class="chekbox">
+					<input type="radio" id="bishkek" name="second" value="wrong">
+				<label for="bishkek">Бишкек</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="madrid" name="second" value="wrong">
+				<label for="madrid">Mадрид</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="moscow" name="second" value="wrong">
+				<label for="moscow">Москва</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="washington" name="second" value="right">
+				<label for="washington">Вашингтон</label>
+				</div>
+
+			</div>
+			<div class="question">
+				<h2>Столица Кыргызстана</h2>
+				<div class="chekbox">
+					<input type="radio" id="bishkek" name="third" value="right">
+				<label for="bishkek">Бишкек</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="madrid" name="third" value="wrong">
+				<label for="madrid">Mадрид</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="moscow" name="third" value="wrong">
+				<label for="moscow">Москва</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="washington" name="third" value="wrong">
+				<label for="washington">Вашингтон</label>
+				</div>
+
+			</div>
+			<div class="question">
+				<h2>Столица Испании</h2>
+				<div class="chekbox">
+					<input type="radio" id="bishkek" name="four" value="wrong">
+				<label for="bishkek">Бишкек</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="madrid" name="four" value="right">
+				<label for="madrid">Mадрид</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="moscow" name="four" value="wrong">
+				<label for="moscow">Москва</label>
+				</div>
+
+				<div class="chekbox">
+					<input type="radio" id="washington" name="four" value="wrong">
+				<label for="washington">Вашингтон</label>
+				</div>
+				<button>Отправить</button>
+
+			</div>
+		</div>
+	</div>
+	<script>
+		function count_and_print() {
+			var true_answers = 0;
+			var first_answer = $("input[name='first']:checked").val();
+			var second_answer = $("input[name='second']:checked").val();
+			var third_answer = $("input[name='third']:checked").val();
+			var four_answer = $("input[name='four']:checked").val();
+			if (first_answer == 'right') {
+				true_answers++;
+			}
+			if (second_answer == 'right') {
+				true_answers++;
+			}
+			if (third_answer == 'right') {
+				true_answers++;
+			}
+			if (four_answer == 'right') {
+				true_answers++;
+			}
+			alert("Ваш результат: " + true_answers + " / 4");
+		}
+		$("button").click(count_and_print);
+
+	</script>
+</body>
+</html>
